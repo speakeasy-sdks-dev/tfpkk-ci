@@ -3,6 +3,7 @@
 This provider is generated from `openapi.yaml` using Speakeasy. To test a new version, use the following steps:
 
 - Run `make speakeasy`
+- Run `go mod tidy` to download all dependencies
 - Run `go run main.go -debug`
 - Take the `TF_REATTACH_PROVIDERS` variable and run `export TF_REATTACH_PROVIDERS=...` in your terminal
 - Run `terraform apply` in the same directory as your manifests
