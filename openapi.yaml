@@ -3712,6 +3712,358 @@ paths:
       tags:
         - Plugins
       x-speakeasy-entity-operation: GatewayPluginOpentelemetry#update
+  /control-planes/{controlPlaneId}/core-entities/plugins#AIProxy:
+    parameters:
+      - $ref: '#/components/parameters/ControlPlaneId'
+    post:
+      x-speakeasy-entity-operation: GatewayPluginAIProxy#create
+      description: Create a new AIProxy Plugin
+      summary: Create a new AIProxy Plugin
+      tags:
+        - Plugins
+      operationId: create-aiproxy-plugin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAIProxyPlugin'
+        description: Create a new AIProxy plugin
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AIProxyPlugin'
+          description: Successfully created Plugin
+        '401':
+          $ref: '#/components/responses/HTTP401Error'
+  /control-planes/{controlPlaneId}/core-entities/plugins/{PluginId}#AIProxy:
+    delete:
+      description: Delete a Plugin
+      operationId: delete-aiproxy-plugin
+      parameters:
+        - $ref: '#/components/parameters/PluginId'
+      responses:
+        '204':
+          description: Successfully deleted Plugin or the resource didn't exist
+        '401':
+          $ref: '#/components/responses/HTTP401Error'
+      summary: Delete a Plugin
+      tags:
+        - Plugins
+      x-speakeasy-entity-operation: GatewayPluginAIProxy#delete
+    get:
+      description: Get a Plugin using ID.
+      operationId: get-aiproxy-plugin
+      parameters:
+        - $ref: '#/components/parameters/PluginId'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AIProxyPlugin'
+          description: Successfully fetched Plugin
+        '401':
+          $ref: '#/components/responses/HTTP401Error'
+        '404':
+          description: Resource does not exist
+      summary: Fetch a Plugin
+      tags:
+        - Plugins
+      x-speakeasy-entity-operation: GatewayPluginAIProxy#read
+    parameters:
+      - $ref: '#/components/parameters/ControlPlaneId'
+    put:
+      description: Create or Update Plugin using ID.
+      operationId: update-aiproxy-plugin
+      parameters:
+        - $ref: '#/components/parameters/PluginId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAIProxyPlugin'
+        description: Description of the Plugin
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AIProxyPlugin'
+          description: Successfully upserted Plugin
+        '401':
+          $ref: '#/components/responses/HTTP401Error'
+      summary: Upsert a Plugin
+      tags:
+        - Plugins
+      x-speakeasy-entity-operation: GatewayPluginAIProxy#update
+  /control-planes/{controlPlaneId}/core-entities/plugins#AIPromptGuard:
+    parameters:
+      - $ref: '#/components/parameters/ControlPlaneId'
+    post:
+      x-speakeasy-entity-operation: GatewayPluginAIPromptGuard#create
+      description: Create a new AIPromptGuard Plugin
+      summary: Create a new AIPromptGuard Plugin
+      tags:
+        - Plugins
+      operationId: create-aipromptguard-plugin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAIPromptGuardPlugin'
+        description: Create a new AIPromptGuard plugin
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AIPromptGuardPlugin'
+          description: Successfully created Plugin
+        '401':
+          $ref: '#/components/responses/HTTP401Error'
+  /control-planes/{controlPlaneId}/core-entities/plugins/{PluginId}#AIPromptGuard:
+    delete:
+      description: Delete a Plugin
+      operationId: delete-aipromptguard-plugin
+      parameters:
+        - $ref: '#/components/parameters/PluginId'
+      responses:
+        '204':
+          description: Successfully deleted Plugin or the resource didn't exist
+        '401':
+          $ref: '#/components/responses/HTTP401Error'
+      summary: Delete a Plugin
+      tags:
+        - Plugins
+      x-speakeasy-entity-operation: GatewayPluginAIPromptGuard#delete
+    get:
+      description: Get a Plugin using ID.
+      operationId: get-aipromptguard-plugin
+      parameters:
+        - $ref: '#/components/parameters/PluginId'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AIPromptGuardPlugin'
+          description: Successfully fetched Plugin
+        '401':
+          $ref: '#/components/responses/HTTP401Error'
+        '404':
+          description: Resource does not exist
+      summary: Fetch a Plugin
+      tags:
+        - Plugins
+      x-speakeasy-entity-operation: GatewayPluginAIPromptGuard#read
+    parameters:
+      - $ref: '#/components/parameters/ControlPlaneId'
+    put:
+      description: Create or Update Plugin using ID.
+      operationId: update-aipromptguard-plugin
+      parameters:
+        - $ref: '#/components/parameters/PluginId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAIPromptGuardPlugin'
+        description: Description of the Plugin
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AIPromptGuardPlugin'
+          description: Successfully upserted Plugin
+        '401':
+          $ref: '#/components/responses/HTTP401Error'
+      summary: Upsert a Plugin
+      tags:
+        - Plugins
+      x-speakeasy-entity-operation: GatewayPluginAIPromptGuard#update
+  /control-planes/{controlPlaneId}/core-entities/plugins#AIPromptTemplate:
+    parameters:
+      - $ref: '#/components/parameters/ControlPlaneId'
+    post:
+      x-speakeasy-entity-operation: GatewayPluginAIPromptTemplate#create
+      description: Create a new AIPromptTemplate Plugin
+      summary: Create a new AIPromptTemplate Plugin
+      tags:
+        - Plugins
+      operationId: create-aiprompttemplate-plugin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAIPromptTemplatePlugin'
+        description: Create a new AIPromptTemplate plugin
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AIPromptTemplatePlugin'
+          description: Successfully created Plugin
+        '401':
+          $ref: '#/components/responses/HTTP401Error'
+  /control-planes/{controlPlaneId}/core-entities/plugins/{PluginId}#AIPromptTemplate:
+    delete:
+      description: Delete a Plugin
+      operationId: delete-aiprompttemplate-plugin
+      parameters:
+        - $ref: '#/components/parameters/PluginId'
+      responses:
+        '204':
+          description: Successfully deleted Plugin or the resource didn't exist
+        '401':
+          $ref: '#/components/responses/HTTP401Error'
+      summary: Delete a Plugin
+      tags:
+        - Plugins
+      x-speakeasy-entity-operation: GatewayPluginAIPromptTemplate#delete
+    get:
+      description: Get a Plugin using ID.
+      operationId: get-aiprompttemplate-plugin
+      parameters:
+        - $ref: '#/components/parameters/PluginId'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AIPromptTemplatePlugin'
+          description: Successfully fetched Plugin
+        '401':
+          $ref: '#/components/responses/HTTP401Error'
+        '404':
+          description: Resource does not exist
+      summary: Fetch a Plugin
+      tags:
+        - Plugins
+      x-speakeasy-entity-operation: GatewayPluginAIPromptTemplate#read
+    parameters:
+      - $ref: '#/components/parameters/ControlPlaneId'
+    put:
+      description: Create or Update Plugin using ID.
+      operationId: update-aiprompttemplate-plugin
+      parameters:
+        - $ref: '#/components/parameters/PluginId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAIPromptTemplatePlugin'
+        description: Description of the Plugin
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AIPromptTemplatePlugin'
+          description: Successfully upserted Plugin
+        '401':
+          $ref: '#/components/responses/HTTP401Error'
+      summary: Upsert a Plugin
+      tags:
+        - Plugins
+      x-speakeasy-entity-operation: GatewayPluginAIPromptTemplate#update
+  /control-planes/{controlPlaneId}/core-entities/plugins#AIPromptDecorator:
+    parameters:
+      - $ref: '#/components/parameters/ControlPlaneId'
+    post:
+      x-speakeasy-entity-operation: GatewayPluginAIPromptDecorator#create
+      description: Create a new AIPromptDecorator Plugin
+      summary: Create a new AIPromptDecorator Plugin
+      tags:
+        - Plugins
+      operationId: create-aipromptdecorator-plugin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAIPromptDecoratorPlugin'
+        description: Create a new AIPromptDecorator plugin
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AIPromptDecoratorPlugin'
+          description: Successfully created Plugin
+        '401':
+          $ref: '#/components/responses/HTTP401Error'
+  /control-planes/{controlPlaneId}/core-entities/plugins/{PluginId}#AIPromptDecorator:
+    delete:
+      description: Delete a Plugin
+      operationId: delete-aipromptdecorator-plugin
+      parameters:
+        - $ref: '#/components/parameters/PluginId'
+      responses:
+        '204':
+          description: Successfully deleted Plugin or the resource didn't exist
+        '401':
+          $ref: '#/components/responses/HTTP401Error'
+      summary: Delete a Plugin
+      tags:
+        - Plugins
+      x-speakeasy-entity-operation: GatewayPluginAIPromptDecorator#delete
+    get:
+      description: Get a Plugin using ID.
+      operationId: get-aipromptdecorator-plugin
+      parameters:
+        - $ref: '#/components/parameters/PluginId'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AIPromptDecoratorPlugin'
+          description: Successfully fetched Plugin
+        '401':
+          $ref: '#/components/responses/HTTP401Error'
+        '404':
+          description: Resource does not exist
+      summary: Fetch a Plugin
+      tags:
+        - Plugins
+      x-speakeasy-entity-operation: GatewayPluginAIPromptDecorator#read
+    parameters:
+      - $ref: '#/components/parameters/ControlPlaneId'
+    put:
+      description: Create or Update Plugin using ID.
+      operationId: update-aipromptdecorator-plugin
+      parameters:
+        - $ref: '#/components/parameters/PluginId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAIPromptDecoratorPlugin'
+        description: Description of the Plugin
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AIPromptDecoratorPlugin'
+          description: Successfully upserted Plugin
+        '401':
+          $ref: '#/components/responses/HTTP401Error'
+      summary: Upsert a Plugin
+      tags:
+        - Plugins
+      x-speakeasy-entity-operation: GatewayPluginAIPromptDecorator#update
   /control-planes/{controlPlaneId}/core-entities/plugins#AWSLambda:
     parameters:
       - $ref: '#/components/parameters/ControlPlaneId'
@@ -12103,6 +12455,348 @@ components:
       allOf:
         - $ref: '#/components/schemas/CreatePlugin'
         - $ref: '#/components/schemas/OpentelemetryPluginConfig'
+    AIProxyPluginConfig:
+      properties:
+        config:
+          type: object
+          properties:
+            route_type:
+              type: string
+              enum:
+                - llm/v1/chat
+                - llm/v1/completions
+              description: The model's operation implementation, for this provider.
+            auth:
+              type: object
+              required: false
+              properties:
+                header_name:
+                  type: string
+                  referenceable: true
+                  required: false
+                  description: >-
+                    If AI model requires authentication via Authorization or API
+                    key header, specify its name here.
+                header_value:
+                  type: string
+                  encrypted: true
+                  referenceable: true
+                  required: false
+                  description: >-
+                    Specify the full auth header value for 'header_name', for
+                    example 'Bearer key' or just 'key'.
+                param_name:
+                  type: string
+                  referenceable: true
+                  required: false
+                  description: >-
+                    If AI model requires authentication via query parameter,
+                    specify its name here.
+                param_value:
+                  type: string
+                  encrypted: true
+                  referenceable: true
+                  required: false
+                  description: Specify the full parameter value for 'param_name'.
+                param_location:
+                  type: string
+                  enum:
+                    - query
+                    - body
+                  required: false
+                  description: >-
+                    Specify whether the 'param_name' and 'param_value' options
+                    go in a query string, or the POST form/JSON body.
+            model:
+              type: object
+              properties:
+                provider:
+                  type: string
+                  enum:
+                    - openai
+                    - azure
+                    - anthropic
+                    - cohere
+                    - mistral
+                    - llama2
+                  description: >-
+                    AI provider request format - Kong translates requests to and
+                    from the specified backend compatible formats.
+                name:
+                  type: string
+                  required: false
+                  description: Model name to execute.
+                options:
+                  description: Key/value settings for the model
+                  type: object
+                  required: false
+                  properties:
+                    max_tokens:
+                      type: integer
+                      default: 256
+                      description: >-
+                        Defines the max_tokens, if using chat or completion
+                        models.
+                    temperature:
+                      minimum: 0
+                      maximum: 5
+                      type: number
+                      default: 1
+                      description: >-
+                        Defines the matching temperature, if using chat or
+                        completion models.
+                    top_p:
+                      minimum: 0
+                      maximum: 1
+                      type: number
+                      default: 1
+                      description: Defines the top-p probability mass, if supported.
+                    top_k:
+                      minimum: 0
+                      maximum: 500
+                      type: integer
+                      default: 0
+                      description: Defines the top-k most likely tokens, if supported.
+                    anthropic_version:
+                      type: string
+                      required: false
+                      description: >-
+                        Defines the schema/API version, if using Anthropic
+                        provider.
+                    azure_instance:
+                      type: string
+                      required: false
+                      description: Instance name for Azure OpenAI hosted models.
+                    azure_api_version:
+                      type: string
+                      default: '2023-05-15'
+                      description: '''api-version'' for Azure OpenAI instances.'
+                    azure_deployment_id:
+                      type: string
+                      required: false
+                      description: Deployment ID for Azure OpenAI instances.
+                    llama2_format:
+                      type: string
+                      enum:
+                        - raw
+                        - openai
+                        - ollama
+                      required: false
+                      description: >-
+                        If using llama2 provider, select the upstream message
+                        format.
+                    mistral_format:
+                      type: string
+                      enum:
+                        - openai
+                        - ollama
+                      required: false
+                      description: >-
+                        If using mistral provider, select the upstream message
+                        format.
+                    upstream_url:
+                      required: false
+                      type: string
+                      description: >-
+                        Manually specify or override the full URL to the AI
+                        operation endpoints, when calling (self-)hosted models,
+                        or for running via a private endpoint.
+              required: []
+            logging:
+              type: object
+              properties:
+                log_statistics:
+                  type: boolean
+                  default: true
+                  description: >-
+                    If enabled and supported by the driver, will add model usage
+                    and token metrics into the Kong log plugin(s) output.
+                log_payloads:
+                  type: boolean
+                  default: false
+                  description: >-
+                    If enabled, will log the request and response body into the
+                    Kong log plugin(s) output.
+          required:
+            - model
+        name:
+          type: string
+          const: ai-proxy
+      required:
+        - config
+    AIProxyPlugin:
+      x-speakeasy-entity: GatewayPluginAIProxy
+      allOf:
+        - $ref: '#/components/schemas/Plugin'
+        - $ref: '#/components/schemas/AIProxyPluginConfig'
+    CreateAIProxyPlugin:
+      x-speakeasy-entity: GatewayPluginAIProxy
+      allOf:
+        - $ref: '#/components/schemas/CreatePlugin'
+        - $ref: '#/components/schemas/AIProxyPluginConfig'
+    AIPromptGuardPluginConfig:
+      properties:
+        config:
+          properties:
+            allow_patterns:
+              items:
+                type: string
+              type: array
+              default: []
+              description: >-
+                Array of valid patterns, or valid questions from the 'user' role
+                in chat.
+            deny_patterns:
+              items:
+                type: string
+              type: array
+              default: []
+              description: >-
+                Array of invalid patterns, or invalid questions from the 'user'
+                role in chat.
+            allow_all_conversation_history:
+              type: boolean
+              default: false
+              description: >-
+                If true, will ignore all previous chat prompts from the
+                conversation history.
+          type: object
+        name:
+          type: string
+          const: ai-prompt-guard
+      required: []
+    AIPromptGuardPlugin:
+      x-speakeasy-entity: GatewayPluginAIPromptGuard
+      allOf:
+        - $ref: '#/components/schemas/Plugin'
+        - $ref: '#/components/schemas/AIPromptGuardPluginConfig'
+    CreateAIPromptGuardPlugin:
+      x-speakeasy-entity: GatewayPluginAIPromptGuard
+      allOf:
+        - $ref: '#/components/schemas/CreatePlugin'
+        - $ref: '#/components/schemas/AIPromptGuardPluginConfig'
+    AIPromptTemplatePluginConfig:
+      properties:
+        config:
+          properties:
+            templates:
+              items:
+                required: true
+                type: object
+                properties:
+                  name:
+                    required: true
+                    type: string
+                    description: >-
+                      Unique name for the template, can be called with
+                      `{template://NAME}`
+                  template:
+                    required: true
+                    type: string
+                    description: >-
+                      Template string for this request, supports mustache-style
+                      `{{placeholders}}`
+              type: array
+              description: Array of templates available to the request context.
+            allow_untemplated_requests:
+              type: boolean
+              default: true
+              description: >-
+                Set true to allow requests that don't call or match any
+                template.
+            log_original_request:
+              type: boolean
+              default: false
+              description: >-
+                Set true to add the original request to the Kong log plugin(s)
+                output.
+          type: object
+          required: []
+        name:
+          type: string
+          const: ai-prompt-template
+      required:
+        - config
+    AIPromptTemplatePlugin:
+      x-speakeasy-entity: GatewayPluginAIPromptTemplate
+      allOf:
+        - $ref: '#/components/schemas/Plugin'
+        - $ref: '#/components/schemas/AIPromptTemplatePluginConfig'
+    CreateAIPromptTemplatePlugin:
+      x-speakeasy-entity: GatewayPluginAIPromptTemplate
+      allOf:
+        - $ref: '#/components/schemas/CreatePlugin'
+        - $ref: '#/components/schemas/AIPromptTemplatePluginConfig'
+    AIPromptDecoratorPluginConfig:
+      properties:
+        config:
+          properties:
+            prompts:
+              required: false
+              type: object
+              properties:
+                prepend:
+                  items:
+                    required: false
+                    type: object
+                    properties:
+                      role:
+                        type: string
+                        default: system
+                        enum:
+                          - system
+                          - assistant
+                          - user
+                      content:
+                        required: true
+                        minLength: 1
+                        type: string
+                        maxLength: 500
+                  type: array
+                  description: >-
+                    Insert chat messages at the beginning of the chat message
+                    array. This array preserves exact order when adding
+                    messages.
+                  required: false
+                  maxLength: 15
+                append:
+                  items:
+                    required: false
+                    type: object
+                    properties:
+                      role:
+                        type: string
+                        default: system
+                        enum:
+                          - system
+                          - assistant
+                          - user
+                      content:
+                        required: true
+                        minLength: 1
+                        type: string
+                        maxLength: 500
+                  type: array
+                  description: >-
+                    Insert chat messages at the end of the chat message array.
+                    This array preserves exact order when adding messages.
+                  required: false
+                  maxLength: 15
+          type: object
+        name:
+          type: string
+          const: ai-prompt-decorator
+      required: []
+    AIPromptDecoratorPlugin:
+      x-speakeasy-entity: GatewayPluginAIPromptDecorator
+      allOf:
+        - $ref: '#/components/schemas/Plugin'
+        - $ref: '#/components/schemas/AIPromptDecoratorPluginConfig'
+    CreateAIPromptDecoratorPlugin:
+      x-speakeasy-entity: GatewayPluginAIPromptDecorator
+      allOf:
+        - $ref: '#/components/schemas/CreatePlugin'
+        - $ref: '#/components/schemas/AIPromptDecoratorPluginConfig'
     AWSLambdaPluginConfig:
       properties:
         config:

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 2c02f07b-a809-488f-8483-b33f6ce4917e
 management:
-  docChecksum: 98875cbab887dc0690c235406ba8f4aa
+  docChecksum: 63ae2e96314a8f3e20d20c52cdc67c25
   docVersion: 2.0.0
-  speakeasyVersion: 1.246.1
-  generationVersion: 2.302.1
-  releaseVersion: 0.0.1
-  configChecksum: 302ac3d54ed55644c68a122602f8c261
+  speakeasyVersion: 1.250.0
+  generationVersion: 2.304.1
+  releaseVersion: 0.1.0
+  configChecksum: effeda7d873e248323fb870868eed4bd
 features:
   terraform:
     additionalProperties: 0.1.2
@@ -200,6 +200,22 @@ generatedFiles:
   - internal/sdk/models/operations/deleteopentelemetryplugin.go
   - internal/sdk/models/operations/getopentelemetryplugin.go
   - internal/sdk/models/operations/updateopentelemetryplugin.go
+  - internal/sdk/models/operations/createaiproxyplugin.go
+  - internal/sdk/models/operations/deleteaiproxyplugin.go
+  - internal/sdk/models/operations/getaiproxyplugin.go
+  - internal/sdk/models/operations/updateaiproxyplugin.go
+  - internal/sdk/models/operations/createaipromptguardplugin.go
+  - internal/sdk/models/operations/deleteaipromptguardplugin.go
+  - internal/sdk/models/operations/getaipromptguardplugin.go
+  - internal/sdk/models/operations/updateaipromptguardplugin.go
+  - internal/sdk/models/operations/createaiprompttemplateplugin.go
+  - internal/sdk/models/operations/deleteaiprompttemplateplugin.go
+  - internal/sdk/models/operations/getaiprompttemplateplugin.go
+  - internal/sdk/models/operations/updateaiprompttemplateplugin.go
+  - internal/sdk/models/operations/createaipromptdecoratorplugin.go
+  - internal/sdk/models/operations/deleteaipromptdecoratorplugin.go
+  - internal/sdk/models/operations/getaipromptdecoratorplugin.go
+  - internal/sdk/models/operations/updateaipromptdecoratorplugin.go
   - internal/sdk/models/operations/createawslambdaplugin.go
   - internal/sdk/models/operations/deleteawslambdaplugin.go
   - internal/sdk/models/operations/getawslambdaplugin.go
@@ -346,6 +362,14 @@ generatedFiles:
   - internal/sdk/models/shared/createoauth2plugin.go
   - internal/sdk/models/shared/opentelemetryplugin.go
   - internal/sdk/models/shared/createopentelemetryplugin.go
+  - internal/sdk/models/shared/aiproxyplugin.go
+  - internal/sdk/models/shared/createaiproxyplugin.go
+  - internal/sdk/models/shared/aipromptguardplugin.go
+  - internal/sdk/models/shared/createaipromptguardplugin.go
+  - internal/sdk/models/shared/aiprompttemplateplugin.go
+  - internal/sdk/models/shared/createaiprompttemplateplugin.go
+  - internal/sdk/models/shared/aipromptdecoratorplugin.go
+  - internal/sdk/models/shared/createaipromptdecoratorplugin.go
   - internal/sdk/models/shared/awslambdaplugin.go
   - internal/sdk/models/shared/createawslambdaplugin.go
   - internal/sdk/models/shared/jqplugin.go
@@ -449,6 +473,17 @@ generatedFiles:
   - internal/provider/types/proxy_url.go
   - internal/provider/types/pem.go
   - internal/provider/types/create_acl_plugin_config.go
+  - internal/provider/types/ai_prompt_decorator_plugin_append.go
+  - internal/provider/types/prompts.go
+  - internal/provider/types/create_ai_prompt_decorator_plugin_config.go
+  - internal/provider/types/create_ai_prompt_guard_plugin_config.go
+  - internal/provider/types/templates.go
+  - internal/provider/types/create_ai_prompt_template_plugin_config.go
+  - internal/provider/types/auth.go
+  - internal/provider/types/logging.go
+  - internal/provider/types/options.go
+  - internal/provider/types/model.go
+  - internal/provider/types/create_ai_proxy_plugin_config.go
   - internal/provider/types/create_aws_lambda_plugin_config.go
   - internal/provider/types/create_basic_auth_plugin_config.go
   - internal/provider/types/create_correlation_id_plugin_config.go
@@ -568,6 +603,18 @@ generatedFiles:
   - internal/provider/gatewaypluginacl_resource.go
   - internal/provider/gatewaypluginacl_resource_sdk.go
   - examples/resources/konnect_gateway_plugin_acl/resource.tf
+  - internal/provider/gatewaypluginaipromptdecorator_resource.go
+  - internal/provider/gatewaypluginaipromptdecorator_resource_sdk.go
+  - examples/resources/konnect_gateway_plugin_ai_prompt_decorator/resource.tf
+  - internal/provider/gatewaypluginaipromptguard_resource.go
+  - internal/provider/gatewaypluginaipromptguard_resource_sdk.go
+  - examples/resources/konnect_gateway_plugin_ai_prompt_guard/resource.tf
+  - internal/provider/gatewaypluginaiprompttemplate_resource.go
+  - internal/provider/gatewaypluginaiprompttemplate_resource_sdk.go
+  - examples/resources/konnect_gateway_plugin_ai_prompt_template/resource.tf
+  - internal/provider/gatewaypluginaiproxy_resource.go
+  - internal/provider/gatewaypluginaiproxy_resource_sdk.go
+  - examples/resources/konnect_gateway_plugin_ai_proxy/resource.tf
   - internal/provider/gatewaypluginawslambda_resource.go
   - internal/provider/gatewaypluginawslambda_resource_sdk.go
   - examples/resources/konnect_gateway_plugin_aws_lambda/resource.tf
@@ -721,6 +768,18 @@ generatedFiles:
   - internal/provider/gatewaypluginacl_data_source.go
   - internal/provider/gatewaypluginacl_data_source_sdk.go
   - examples/data-sources/konnect_gateway_plugin_acl/data-source.tf
+  - internal/provider/gatewaypluginaipromptdecorator_data_source.go
+  - internal/provider/gatewaypluginaipromptdecorator_data_source_sdk.go
+  - examples/data-sources/konnect_gateway_plugin_ai_prompt_decorator/data-source.tf
+  - internal/provider/gatewaypluginaipromptguard_data_source.go
+  - internal/provider/gatewaypluginaipromptguard_data_source_sdk.go
+  - examples/data-sources/konnect_gateway_plugin_ai_prompt_guard/data-source.tf
+  - internal/provider/gatewaypluginaiprompttemplate_data_source.go
+  - internal/provider/gatewaypluginaiprompttemplate_data_source_sdk.go
+  - examples/data-sources/konnect_gateway_plugin_ai_prompt_template/data-source.tf
+  - internal/provider/gatewaypluginaiproxy_data_source.go
+  - internal/provider/gatewaypluginaiproxy_data_source_sdk.go
+  - examples/data-sources/konnect_gateway_plugin_ai_proxy/data-source.tf
   - internal/provider/gatewaypluginawslambda_data_source.go
   - internal/provider/gatewaypluginawslambda_data_source_sdk.go
   - examples/data-sources/konnect_gateway_plugin_aws_lambda/data-source.tf
